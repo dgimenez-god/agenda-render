@@ -1,0 +1,288 @@
+/* Estilos base */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#calendar {
+    border-radius: 0px; /* Ajusta el valor según el radio de redondeo que desees */
+    overflow: hidden; /* Asegura que el contenido no se desborde de los bordes redondeados */
+    width: 80%;
+    margin: 20px auto;
+    height: 520px; /* Esto es ~.fc-timegrid-slot height*slots+140  */
+}
+
+.fc-timegrid-slot {
+    height: 27px !important;
+}
+
+.fc {
+    display: flex;
+    flex-direction: column;
+}
+
+.fc-view-harness {
+    flex: 1;
+    height: auto !important;
+}
+
+.fc-timegrid-event-harness {
+    width: 32% !important;
+    position: absolute !important;
+}
+
+.fc-event {
+    font-size: 1rem !important;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    z-index: 1000; /* Por encima de la página */
+}
+
+.assign-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    z-index: 1001;
+    max-width: 400px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    transform: translate(-50%, -50%);
+}
+
+/* Title */
+.modal-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.modal-date {
+    text-align: center;
+    font-size: 18px; 
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Labels */
+.label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Service Options */
+.service-options {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* Service Labels */
+.service-label {
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+/* Duration Control */
+.duration-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.duration-display {
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-control {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 30px;
+}
+
+/* Input Fields */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Button Styles */
+.buttons {
+    text-align: center;
+}
+
+.btn-save, .btn-close, .btn-cancel {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 40px;
+}
+
+.btn-save {
+    background-color: #4caf4fed;
+    color: white;
+}
+
+.btn-close {
+    background-color: #7b90ab;
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-cancel {
+    background-color: #f44336e9;
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-control:hover {
+    background-color: #bbb;
+}
+
+.btn-save:hover {
+    background-color: #45a049;
+}
+
+.btn-close:hover {
+    background-color: #5a6e82;
+}
+
+.btn-cancel:hover {
+    background-color: #d32f2f;
+}
+
+.icon {
+    width: 17px; /* Tamaño por defecto */
+    height: 17px;
+    vertical-align: middle;
+    background-color: transparent;
+}
+
+/* Posicionar el icono de tacho de basura en la esquina superior derecha */
+.trash-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 18px; /* Ajusta el tamaño del icono */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+}
+
+/* Estilos para pantallas en orientación portrait */
+@media (orientation: portrait) {
+    #calendar {
+        width: 90%;
+        margin: 20px auto; /* Más margen arriba y abajo */
+        height: 1450px !important; /* Esto es ~.fc-timegrid-slot height*slots+140  */
+    }
+
+    .fc-timegrid-slot {
+        height: 82px !important; 
+    }
+
+    .fc-timegrid-event-harness {
+        width: 90% !important; /* Eventos más anchos */
+    }
+
+    .fc-toolbar {
+        font-size: 1.5rem; /* Aumentamos más el tamaño del título */
+    }
+
+    .fc-col-header-cell-cushion,
+    .fc-timegrid-slot-label-cushion {
+        font-size: 2.2rem; /* Aumentamos más el tamaño de las etiquetas */
+    }
+
+    .fc-timegrid-event {
+        width: 36% !important;
+        font-size: 1.8rem !important; /* Aumentamos el tamaño de texto de los eventos */
+    }
+
+    .assign-modal {
+        position: fixed;
+        top: 50%;
+        left: 55%;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        z-index: 1001;
+        max-width: 600px;
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.0rem;
+        transform: translate(-50%, -50%);
+    }
+
+    .modal-title {
+        font-size: 2.0rem; /* Reduce el tamaño del título para mejor visibilidad */
+        margin-bottom: 10px; /* Ajuste de espacio debajo del título */
+    }
+
+    .modal-date {
+        font-size: 2.0rem;  /* Ajusta el tamaño de la fecha */
+    }
+
+    .input-field {
+        font-size: 2.0rem; /* Ajuste de tamaño de fuente en campos de texto */
+        padding: 8px;
+        margin-bottom: 5px;
+    }
+
+    .service-label {
+        font-size: 2.0rem;
+    }
+
+    .duration-display {
+        font-size: 2.0rem;
+    }
+
+    .btn-save, .btn-close, .btn-cancel {
+        font-size: 2.0rem;
+    }
+
+    .btn-control {
+        font-size: 3.0rem;
+    }
+
+    .icon {
+        width: 25px; /* Tamaño más grande para celulares pequeños */
+        height: 25px;
+    }
+
+    .trash-icon {
+        font-size: 40px; /* Ajusta el tamaño del icono */
+    }
+}
+
