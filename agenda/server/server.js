@@ -32,7 +32,7 @@ app.get('/agenda', (req, res) => {
 
 const WEBHOOK_VERIFY_TOKEN = 'mytoken';
 const business_cell_number_id = '521753024347254'; // 521753024347254   -- 474399345752131
-const manager_cell_number = '5493426141300'
+const manager_cell_number = '5493436237335'
 const version = 'v21.0'; //opcional 'v21.0'
 
 //////////////////////
